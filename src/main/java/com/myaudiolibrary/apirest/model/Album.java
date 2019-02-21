@@ -13,9 +13,9 @@ public class Album {
     @Column
     private String title;
 
-    //@ManyToOne
-   // @JoinColumn(name = "artistId")
-   // private Artist artist;
+    @ManyToOne
+    @JoinColumn(name = "artistId")
+    private Artist artist;
 
     public Album(Integer id, String title) {
         this.id = id;
@@ -38,11 +38,11 @@ public class Album {
         this.title = title;
     }
 
-  /*  public Artist getArtist() {
+    public Artist getArtist() {
         return artist;
     }
 
     public void setArtist(Artist artist) {
         this.artist = artist;
-    }*/
+    }
 }

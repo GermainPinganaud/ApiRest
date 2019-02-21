@@ -10,5 +10,10 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ArtistRepository extends PagingAndSortingRepository<Artist,Integer> {
     Artist findById(Integer id);
+
+    Artist save(String name);
+
     Page<Artist> findByNameContains(String name, Pageable pageable);
+
+    Page<Artist> findAll(Pageable pageable);
 }

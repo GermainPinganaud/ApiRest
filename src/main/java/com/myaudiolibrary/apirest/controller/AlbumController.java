@@ -15,17 +15,4 @@ public class AlbumController {
     public Album addAlbum(@RequestBody Album album) {
         return albumRepository.save(album);
     }
-
-//    @RequestMapping(
-//            method = RequestMethod.PUT,
-//            consumes = "application/json",
-//            produces = "application/json"
-//    )
-//    public Album updateArtist(@PathVariable(value = "id") Integer id, @RequestBody String title){
-//        Artist artist = findById(id);
-//        artistRepository.save(album);
-//        album.setArtist(artist);
-//        album.setTitle(title);
-//        return artistRepository.save(album);
-//    }
 }

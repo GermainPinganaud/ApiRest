@@ -19,11 +19,7 @@ public class ArtistController {
     @Autowired
     private ArtistRepository artistRepository;
 
-    /**
-     * findById
-     * @param id
-     * @return Artist
-     */
+
     @RequestMapping(
             method = RequestMethod.GET,
             value = "/{id}"
@@ -79,4 +75,15 @@ public class ArtistController {
         return artistRepository.save(artist);
     }
 
+    @RequestMapping(
+            method = RequestMethod.PUT,
+            value = "/{id}",
+            consumes = "application/json",
+            produces = "application/json"
+    )
+    public Artist updateArtist(@PathVariable(value = "id") Integer id, @RequestBody Artist artistNewBody){
+        Artist artistToUpdate = findById(id);
+        artistNewBody.setId(artistToUpdate.getId());
+        return artistRepository.save(artistNewBody);
+    }
 }

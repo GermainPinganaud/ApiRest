@@ -86,4 +86,13 @@ public class ArtistController {
         artistNewBody.setId(artistToUpdate.getId());
         return artistRepository.save(artistNewBody);
     }
+
+    @RequestMapping(
+            method = RequestMethod.DELETE,
+            value = "/{id}"
+    )
+    public void deleteArtist(@PathVariable(value = "id") Integer id){
+        Artist artist = artistRepository.findById(id);
+        artistRepository.delete(artist);
+    }
 }

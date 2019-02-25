@@ -13,6 +13,8 @@ public interface ArtistRepository extends PagingAndSortingRepository<Artist,Inte
 
     Artist save(String name);
 
+    void delete(Artist artist);
+
     Page<Artist> findByNameContains(String name, Pageable pageable);
 
     Page<Artist> findAll(Pageable pageable);
